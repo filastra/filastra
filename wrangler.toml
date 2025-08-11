@@ -1,0 +1,7 @@
+name = "filastra"
+account_id = "75b2c295f981f1e8303de283b45d2557"
+compatibility_date = "2025=08=11"
+workers_dev = true
+
+[assets]
+directory = "./"
