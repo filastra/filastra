@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FIlastra — Events & Experiences (Coming Soon)</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#faf9f7;
+    --panel:#ffffff;
+    --muted:#66615a;
+    --accent:#d98f2a;   /* warm gold */
+    --accent-2:#2b2b2b; /* dark text */
+    --soft:#f3efe9;
+    --radius:14px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,#fffaf6,var(--bg));-webkit-font-smoothing:antialiased}
+  body{font-family:Montserrat, system-ui, Arial, sans-serif;color:var(--accent-2);display:flex;align-items:center;justify-content:center;padding:28px}
+
+  /* container */
+  .frame{
+    width:100%;
+    max-width:1120px;
+    background:var(--panel);
+    border-radius:var(--radius);
+    box-shadow: 0 20px 60px rgba(44,40,37,0.08);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns: 1fr 380px;
+    gap:0;
+  }
+
+  /* left: visuals + headline */
+  .left{
+    padding:40px 48px;
+    background:linear-gradient(180deg, rgba(217,143,42,0.02), transparent 40%);
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:18px;
+  }
+
+  /* subtle stage spot */
+  .stage-svg{position:absolute;right:0;top:0;bottom:0;width:48%;opacity:0.95;pointer-events:none}
+
+  h1{margin:0;font-family:Merriweather, serif;font-size:42px;line-height:1;color:var(--accent-2)}
+  .strap{font-size:14px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+  .lead{font-size:16px;color:var(--muted);max-width:60ch;line-height:1.6;margin-top:6px}
+
+  .features{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+  .chip{background:var(--soft);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--accent-2);font-size:14px;border:1px solid rgba(0,0,0,0.03)}
+
+  /* right: actions */
+  .right{
+    padding:36px 28px;
+    border-left:1px solid #f0eee9;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    justify-content:flex-start;
+    background:linear-gradient(180deg, #fff, #fffaf6);
+  }
+
+  .panel-title{font-size:18px;font-weight:700;margin:0}
+  .panel-sub{color:var(--muted);font-size:14px;margin-top:4px}
+
+  .contact-btn{
+    display:inline-block;
+    margin-top:12px;
+    background:linear-gradient(90deg,var(--accent),#c97a20);
+    color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700;
+    box-shadow:0 10px 26px rgba(217,143,42,0.12);transition:transform .16s ease;
+  }
+  .contact-btn:hover{transform:translateY(-4px)}
+
+  .subscribe{display:flex;gap:8px;margin-top:12px}
+  .subscribe input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid #eee;font-size:14px}
+  .subscribe button{padding:10px 12px;border-radius:10px;border:none;background:var(--accent-2);color:#fff;font-weight:700;cursor:pointer}
+
+  .meta{margin-top:auto;color:var(--muted);font-size:13px}
+
+  /* small decorative icons row */
+  .icons{display:flex;gap:8px;margin-top:10px}
+  .icons .ico{padding:8px 10px;border-radius:8px;background:#fff;border:1px solid #f0eee9;font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+
+  /* responsive */
+  @media (max-width:1040px){ .frame{grid-template-columns:1fr 340px} }
+  @media (max-width:780px){
+    body{padding:16px}
+    .frame{grid-template-columns:1fr;min-height:700px}
+    .stage-svg{display:none}
+    .right{border-left:none;border-top:1px solid #f0eee9}
+  }
+  @media (max-width:420px){
+    h1{font-size:28px}
+    .lead{font-size:15px}
+  }
+
+  /* accessible focus */
+  a:focus, button:focus, input:focus{outline:3px solid rgba(217,143,42,0.15);outline-offset:3px}
+</style>
+</head>
+<body>
+  <div class="frame" role="main" aria-labelledby="title">
+
+    <!-- LEFT -->
+    <section class="left" aria-labelledby="title">
+      <div style="z-index:2">
+        <div class="strap">EVENTS • PRODUCTIONS • EXPERIENCES</div>
+        <h1 id="title">Filastra — Event Design & Production</h1>
+        <p class="lead">We design memorable live experiences: product launches, brand activations, weddings, and bespoke corporate events. Our team plans, designs and produces from concept to applause.</p>
+
+        <div class="features" aria-hidden="true">
+          <div class="chip">Creative Direction</div>
+          <div class="chip">Full Production</div>
+          <div class="chip">Venue Sourcing</div>
+          <div class="chip">Catering & AV</div>
+        </div>
+
+        <div style="margin-top:18px">
+          <a class="contact-btn" href="mailto:hello@filastra.com?subject=Event%20Inquiry">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- decorative stage / spotlight (inline SVG) -->
+      <svg class="stage-svg" viewBox="0 0 800 600" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+        <defs>
+          <radialGradient id="gspot" cx="50%" cy="15%" r="60%"><stop offset="0%" stop-color="rgba(217,143,42,0.22)"/><stop offset="60%" stop-color="rgba(217,143,42,0.06)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient>
+        </defs>
+
+        <!-- stage floor -->
+        <rect x="0" y="420" width="800" height="180" fill="#fff7ef"/>
+        <!-- spotlight -->
+        <ellipse cx="430" cy="120" rx="240" ry="90" fill="url(#gspot)"/>
+        <!-- simple line stage and speakers -->
+        <g fill="none" stroke="#5a534b" stroke-width="2" stroke-linecap="round">
+          <path d="M70 420 L730 420" />
+          <rect x="100" y="330" width="80" height="80" rx="6" fill="#fff" stroke="#ddd"/>
+          <rect x="620" y="330" width="80" height="80" rx="6" fill="#fff" stroke="#ddd"/>
+        </g>
+
+        <!-- confetti dots -->
+        <g fill="#d98f2a" opacity="0.9">
+          <circle cx="360" cy="260" r="4"/><circle cx="390" cy="210" r="3"/><circle cx="440" cy="240" r="3"/>
+          <circle cx="480" cy="200" r="4"/><circle cx="520" cy="260" r="3"/>
+        </g>
+
+        <!-- calendar icon -->
+        <g transform="translate(340,340)">
+          <rect x="0" y="0" width="120" height="110" rx="8" fill="#fff" stroke="#e8e0d6"/>
+          <rect x="0" y="-12" width="120" height="18" rx="6" fill="#f7efe5"/>
+          <circle cx="24" cy="28" r="6" fill="#d98f2a"/>
+          <circle cx="62" cy="28" r="6" fill="#2b2b2b"/>
+          <circle cx="100" cy="28" r="6" fill="#d98f2a"/>
+        </g>
+      </svg>
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="right" aria-label="Contact and updates">
+      <div>
+        <div class="panel-title">Book Filastra</div>
+        <div class="panel-sub">Tell us about your event — we'll respond within 48 hours.</div>
+      </div>
+
+      <div style="margin-top:8px">
+        <strong style="display:block">Quick contact</strong>
+        <div style="margin-top:8px;color:var(--muted)">Email: <a href="mailto:hello@filastra.com">hello@filastra.com</a></div>
+        <div style="margin-top:6px;color:var(--muted)">Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></div>
+      </div>
+
+      <div style="margin-top:6px">
+        <strong style="display:block">Subscribe</strong>
+        <form class="subscribe" action="#" method="POST" onsubmit="return false;" aria-label="Subscribe form">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button type="submit">Join</button>
+        </form>
+        <div style="margin-top:8px;color:var(--muted)">Get event guides, sample proposals, and priority booking notices.</div>
+      </div>
+
+      <div style="margin-top:10px">
+        <div class="panel-title" style="font-size:15px;margin-bottom:6px">Services</div>
+        <div class="icons" aria-hidden="true">
+          <span class="ico">Creative</span>
+          <span class="ico">Production</span>
+          <span class="ico">Logistics</span>
+          <span class="ico">Hospitality</span>
+        </div>
+      </div>
+
+      <div class="meta">
+        © Filastra 2025 • <a href="mailto:hello@filastra.com">hello@filastra.com</a>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
